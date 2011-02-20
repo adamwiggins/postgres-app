@@ -1195,12 +1195,14 @@ checkDataDir(void)
 	 * XXX can we safely enable this check on Windows?
 	 */
 #if !defined(WIN32) && !defined(__CYGWIN__)
+/*
 	if (stat_buf.st_uid != geteuid())
 		ereport(FATAL,
 				(errcode(ERRCODE_OBJECT_NOT_IN_PREREQUISITE_STATE),
 				 errmsg("data directory \"%s\" has wrong ownership",
 						DataDir),
 				 errhint("The server must be started by the user that owns the data directory.")));
+*/
 #endif
 
 	/*
