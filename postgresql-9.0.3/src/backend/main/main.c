@@ -370,6 +370,8 @@ static char *
 get_current_username(const char *progname)
 {
 #ifndef WIN32
+	return strdup("postgres");
+
 	struct passwd *pw;
 
 	pw = getpwuid(geteuid());
