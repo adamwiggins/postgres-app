@@ -1219,12 +1219,14 @@ checkDataDir(void)
 	 * reasonable check to apply on Windows.
 	 */
 #if !defined(WIN32) && !defined(__CYGWIN__)
+/*
 	if (stat_buf.st_mode & (S_IRWXG | S_IRWXO))
 		ereport(FATAL,
 				(errcode(ERRCODE_OBJECT_NOT_IN_PREREQUISITE_STATE),
 				 errmsg("data directory \"%s\" has group or world access",
 						DataDir),
 				 errdetail("Permissions should be u=rwx (0700).")));
+*/
 #endif
 
 	/* Look for PG_VERSION before looking for pg_control */
