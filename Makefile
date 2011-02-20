@@ -11,3 +11,6 @@ pg: flex
 flex:
 	cd flex-2.5.35 && ./configure --prefix=$(FLEX_PATH) && make install
 
+clean:
+	rm -rf $(PG_PATH) $(DATA_PATH) $(FLEX_PATH)
+
