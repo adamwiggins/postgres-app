@@ -2751,9 +2751,10 @@ main(int argc, char *argv[])
 
 	canonicalize_path(share_path);
 
-	effective_user = get_id();
-	if (strlen(username) == 0)
+	if (strlen(username) == 0) {
+		effective_user = get_id();
 		username = effective_user;
+	}
 
 	set_input(&bki_file, "postgres.bki");
 	set_input(&desc_file, "postgres.description");
