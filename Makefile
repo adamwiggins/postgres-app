@@ -8,7 +8,7 @@ init: pg
 	echo $(PASSWORD) > password.txt
 	$(PG_PATH)/bin/initdb $(DATA_PATH) -U postgres --pwfile=password.txt
 	rm -f password.txt
-	echo 'host all all 0.0.0.0/0 md5' >> $(DATA_PATH)/pg_hba.conf
+	echo 'host all all 0.0.0.0/0 md5' > $(DATA_PATH)/pg_hba.conf
 
 pg: flex
 	cd postgresql-9.0.3 && FLEX=$(FLEX_PATH)/bin/flex ./configure --prefix=$(PG_PATH)
