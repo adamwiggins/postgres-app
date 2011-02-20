@@ -1,5 +1,5 @@
-PG_PATH=/tmp/pg
-DATA_PATH=/tmp/pgdata
+PG_PATH=$(PWD)/pg
+DATA_PATH=$(PWD)/pgdata
 
 pg:
 	cd postgresql-9.0.3 && ./configure --prefix=$(PG_PATH)
